@@ -1,0 +1,80 @@
+<html>
+    <script>
+        let table1=""
+        Name=""
+        Marks=""
+        let records=
+        [
+            {
+                "Name":"Sarah",
+                "Marks":81,
+            },
+            {
+                "Name":"John",
+                "Marks":92,                
+            },
+            {
+                "Name":"Mary",
+                "Marks":65,
+            },
+        ];
+
+            function addTd(txt){
+            
+                let tdTemp=document.createElement("td")
+                tdTemp.innerHTML=txt
+            
+                return tdTemp
+
+            }
+        function displayTable(n,m){
+            let tr1=document.createElement("tr")
+         /*   let td1=document.createElement("td")
+            let td2=document.createElement("td")
+
+            td1.innerHTML=n
+            td2.innerHTML=m
+         
+             tr1.appendChild(addTd(n))
+                tr1.appendChild(addTd(m))
+            */
+            tr1.appendChild(addTd(n))
+            tr1.appendChild(addTd(m))
+         //   tr1.appendChild(td1)
+           // tr1.appendChild(td2)
+
+            table1.appendChild(tr1)
+
+            document.getElementById("na").value=""
+            document.getElementById("marks").value=""
+        }
+
+        function show(Name,Marks){
+            table1=document.createElement("table")
+            table1.border="2"
+            for(let i=0;i<records.length;i++){
+                displayTable(records[i].Name,records[i].Marks);
+            }
+            document.body.appendChild(table1)
+        }
+
+        function addRecord(na,marks){
+            records.push(
+                {
+                    "Name":na.value,
+                    "Marks":marks.value
+                }
+            )
+            displayTable(na.value,marks.value);
+        }
+    </script>
+
+    <body onload="show(Name,Marks)">
+    Name: <input type="text" id="na" autofocus> <br>
+    Marks: <input type="text" id="marks"><br>
+    <input type="button" value=" + " onClick="addRecord(na,marks)"><br>
+    <br>
+    <br>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<html>
+    <script>
+        function copyMessage(lower,upper){
+            newmsg.value=""
+            let message=msg.value
+
+            let i=0
+            while(i<message.length){
+                if (message.charCodeAt(i)>=lower && message.charCodeAt(i)<=upper){
+                    newmsg.value+=message.substring(i,i+1)
+                }
+                i++
+            }
+        }
+    </script>
+
+    Enter Message: <input type="text" id="msg"> <br>
+    <input type="Button" value="Copy Upper Case Letters" onclick="copyMessage(65,90)">
+    <input type="Button" value="Copy Lower Case Letters" onclick="copyMessage(97,122)">
+    <input type="Button" value="Copy Digits" onclick="copyMessage(48,57)">
+    <br>
+    New Message: <input type="text" id="newmsg">
+    
+</html>

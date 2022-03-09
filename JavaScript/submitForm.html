@@ -1,0 +1,34 @@
+<html>
+
+<script>
+    function checkData(){
+        let dataCheck=true
+        if (name1.value==""){
+            nameErr.style.visibility="visible"
+            dataCheck=false
+        }
+        else{
+            nameErr.style.visibility="hidden"
+        }
+        if (address.value==""){
+            addressErr.style.visibility="visible"
+            dataCheck=false
+        }
+        else{
+            addressErr.style.visibility="hidden"
+        }
+        return dataCheck
+    }
+</script>
+
+<form action="http://www.QA.com" onsubmit="return checkData()">
+Enter Name: <input type="text" id="name1"><span id="nameErr" style="color:red;visibility:hidden"> Name Is Missing</span>
+<br>
+Your Address: <input type="text" id="address"> <span id="addressErr" style="color:red;visibility:hidden"> Address Is Missing</span>
+<br>
+<br>
+<input type="submit" value="OK">
+
+</form>
+
+</html>
